@@ -1,0 +1,60 @@
+# Environment-specific files
+node_modules/ # Dependency directory managed by npm
+bower_components/ # Deprecated, remove if present
+.npmrc # npm configuration
+.yarnrc # Yarn configuration
+.env # Local environment variables
+.env.development # Development environment variables
+.env.test # Testing environment variables
+.env.production # Production environment variables
+.nvmrc # Node Version Manager configuration
+
+# Build output directories
+build/
+dist/
+out/
+
+# Runtime data
+pids* # Process IDs
+*.pid # Process IDs
+logs/ # Log files
+coverage/ # Test coverage data
+.nyc_output/ # nyc test coverage data
+
+# IDE and editor files
+# Adjust or remove based on your editor
+.idea/
+.vscode/
+.sublime-workspaces/
+.eslintcache/
+.stylelintcache/
+.prettierrc
+
+# Temporary files
+tmp/
+temp/
+
+# Generated files
+*.bundle.js
+webpack.config.js # For Webpack projects
+gulpfile.js # For Gulp projects
+package-lock.json # npm lock file
+
+# TypeScript projects
+*.tsbuildinfo
+
+# Linting and formatting related files
+eslint.*
+jest.*
+prettier.*
+
+# Other development tools
+.prettierrc
+prettier.config.js
+.stylelintrc
+stylelint.config.js
+
+# Ignore any globally ignored files
+.gitignore_global
+
+# End of file
