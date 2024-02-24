@@ -1,5 +1,6 @@
 import BasePage from './BasePage.js'
 import {By} from "selenium-webdriver";
+import currency from "currency.js";
 class GoogleFinanceDataPage extends BasePage{
     URL = 'https://www.google.com/finance/quote/BTC-USD';
     USD_BTC_PRICE_LOCATOR = 'div[data-source="BTC"] div[jsname="ip75Cb"]'
@@ -11,7 +12,7 @@ class GoogleFinanceDataPage extends BasePage{
 
     async getUsdBtcPriceByCss(){
         let price = await this.getElementTextByCss(this.USD_BTC_PRICE_LOCATOR);
-        return parseFloat(price.replace(',', ''));
+        return currency(price).value;
     }
 
     async handleCookiesScreen() {
