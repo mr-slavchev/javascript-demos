@@ -1,6 +1,5 @@
 import Rpc_Utils from './utils/Rpc_Utils.js'
 import pkg from 'pactum';
-import {expect} from 'chai';
 import Polling from "./utils/Polling.js";
 import CustomAssertions from "./utils/CustomAssertions.js";
 
@@ -32,7 +31,7 @@ describe("USD-BTC compare", async () =>{
         'f.sid': '-6003776348998740224', // signed 64 bit integer, XSRF deterrent
         'bl': 'boq_finance-ui_20240129.01_p0', // name and version of BE
         'hl': 'en-GB', // ISO language code
-        // 'soc-app': 162, // all soc- options are optional
+        // 'soc-app': 162, // all soc- params are optional
         // 'soc-platform': 1,
         // 'soc-device': 1,
         '_reqid': 354443,
@@ -44,7 +43,7 @@ describe("USD-BTC compare", async () =>{
     const at = `ANXCC_DjFGmKgu1BkTX4kkYTdboW:1708175242282`
 
     test_data.forEach(({n, m})=>{
-        it(`should run for ${n}, check each ${m} secs and not vary by percentage`, async () => {
+        it(`should run in API for ${n}, check each ${m} secs and not vary by percentage`, async () => {
             const prices = await Polling.recordActivity(
                 m, n, async ()=> {
                     const resp = await _spec(FINANCE_URL_PARTIAL, HEADERS, PARAMS, f_req, at);
